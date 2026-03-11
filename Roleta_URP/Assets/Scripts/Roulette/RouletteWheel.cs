@@ -6,6 +6,7 @@ public class RouletteWheel : MonoBehaviour
 {
     [SerializeField] RectTransform _wheel = null;
     [SerializeField] Button _spinButton = null;
+    [SerializeField] AnimationCurve _curve = null;
     [SerializeField] int _numberOfSlots = 8;
     [Space]
     [SerializeField] float _minSpinTime = 10f;
@@ -34,24 +35,30 @@ public class RouletteWheel : MonoBehaviour
 
     public void Spin()
     {
-        if (!_spinning)
-            StartCoroutine(SpinRoutine());
+        Spin(Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed)));
     }
 
-    private IEnumerator SpinRoutine()
+    public void Spin(float _speed)
+    {
+        if (!_spinning)
+            StartCoroutine(SpinRoutine(_speed));
+    }
+
+    private IEnumerator SpinRoutine(float _speed)
     {
         _spinning = true;
         _spinButton.interactable = false;
 
         float _duration = Random.Range(_minSpinTime, _maxSpinTime);
-        float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
+        //float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
 
         float _time = 0;
 
         while (_time < _duration)
         {
             float _t = _time / _duration;
-            float _currentSpeed = Mathf.Lerp(_speed, 0, _t);
+            var _c = _curve.Evaluate(_t);
+            float _currentSpeed = Mathf.Lerp(_speed, 0, _c);
             _wheel.Rotate(0, 0, -_currentSpeed * Time.deltaTime);
             _time += Time.deltaTime;
             yield return null;
