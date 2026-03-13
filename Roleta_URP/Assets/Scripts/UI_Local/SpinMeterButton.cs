@@ -6,6 +6,9 @@ public class SpinMeterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 {
     [SerializeField] Image _fill = null;
     [SerializeField] Gradient _color = null;
+    [SerializeField] CanvasView _mainView = null;
+    [SerializeField] CanvasView _fillView = null;
+    [SerializeField] float _speed = 1f;
 
     private float _timer = 0f;
     private bool _isHolding = false;
@@ -15,14 +18,41 @@ public class SpinMeterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         ResetValues();
     }
 
+    private void OnEnable()
+    {
+        RouletteWheel.OnSpinStart += Hide;
+        RouletteWheel.OnSpinEnd += Show;
+    }
+
+    private void OnDisable()
+    {
+        RouletteWheel.OnSpinStart -= Hide;
+        RouletteWheel.OnSpinEnd -= Show;
+    }
+
     private void Update()
     {
         if (_isHolding)
         {
-            _fill.fillAmount = Mathf.PingPong(_timer, 1);
+            _fill.fillAmount = Mathf.PingPong(_timer * _speed, 1);
             _fill.color = _color.Evaluate(_fill.fillAmount);
             _timer += Time.deltaTime;
         }
+
+        if (_isHolding)
+            _fillView.InstantShow();
+        else
+            _fillView.InstantHide();
+    }
+
+    private void Show(RouletteWheel arg0)
+    {
+        _mainView.InstantShow();
+    }
+
+    private void Hide(RouletteWheel arg0)
+    {
+        _mainView.InstantHide();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -36,7 +66,8 @@ public class SpinMeterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         _isHolding = false;
 
         var _wheel = FindFirstObjectByType<RouletteWheel>();
-        _wheel.Spin(_fill.fillAmount * 4000 + 1000, 0f);
+        _wheel.SpinNormalized(_fill.fillAmount);
+        //_wheel.Spin(_fill.fillAmount * 4000 + 1000);
 
         ResetValues();
     }

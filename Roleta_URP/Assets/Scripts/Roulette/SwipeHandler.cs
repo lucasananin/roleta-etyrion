@@ -62,7 +62,8 @@ public class SwipeHandler : MonoBehaviour
             //Debug.Log($"// swipe speed = {(int)swipeSpeed}");
 
             var _wheel = FindFirstObjectByType<RouletteWheel>();
-            _wheel.Spin((int)swipeSpeed / 2, 0f);
+            _wheel.SpinRandomly();
+            //_wheel.Spin((int)swipeSpeed / 2);
         }
     }
 }

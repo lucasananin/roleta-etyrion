@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Events;
 
 public class RouletteWheel : MonoBehaviour
 {
@@ -9,13 +10,16 @@ public class RouletteWheel : MonoBehaviour
     [SerializeField] AnimationCurve _curve = null;
     [SerializeField] int _numberOfSlots = 8;
     [Space]
-    [SerializeField] float _minSpinTime = 10f;
-    [SerializeField] float _maxSpinTime = 15f;
+    [SerializeField] float _minDuration = 15f;
+    [SerializeField] float _maxDuration = 20f;
     [Space]
     [SerializeField] float _minSpeed = 4f;
     [SerializeField] float _maxSpeed = 6f;
 
     private bool _spinning = false;
+
+    public static event UnityAction<RouletteWheel> OnSpinStart = null;
+    public static event UnityAction<RouletteWheel> OnSpinEnd = null;
 
     private void Awake()
     {
@@ -25,25 +29,37 @@ public class RouletteWheel : MonoBehaviour
 
     private void OnEnable()
     {
-        _spinButton.onClick.AddListener(Spin);
+        _spinButton.onClick.AddListener(SpinRandomly);
     }
 
     private void OnDisable()
     {
-        _spinButton.onClick.RemoveListener(Spin);
+        _spinButton.onClick.RemoveListener(SpinRandomly);
     }
 
-    public void Spin()
+    public void SpinRandomly()
     {
-        float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
-        float _duration = Random.Range(_minSpinTime, _maxSpinTime);
-        Spin(_speed, _duration);
+        //float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
+        float _speed = Random.Range(_minSpeed, _maxSpeed);
+        //float _duration = Random.Range(_minSpinTime, _maxSpinTime);
+        Spin(_speed/*, _duration*/);
     }
 
-    public void Spin(float _speed, float _duration)
+    public void SpinNormalized(float _speedNormalized)
     {
-        _speed = Mathf.Clamp(_speed, 0, 5000);
-        _duration = _minSpinTime + _speed / 1000f;
+        var _speed = Mathf.Lerp(_minSpeed, _maxSpeed, _speedNormalized);
+        var _duration = Mathf.Lerp(_minDuration, _maxDuration, _speedNormalized);
+
+        if (!_spinning)
+            StartCoroutine(SpinRoutine(_speed, _duration));
+    }
+
+    public void Spin(float _speed/*, float _duration*/)
+    {
+        _speed = Mathf.Clamp(_speed, _minSpeed, _maxSpeed);
+        //_duration = _minSpinTime + _speed / 1000f;
+        var _speedNormalized = Mathf.InverseLerp(_minSpeed, _maxSpeed, _speed);
+        var _duration = Mathf.Lerp(_minDuration, _maxDuration, _speedNormalized);
 
         if (!_spinning)
             StartCoroutine(SpinRoutine(_speed, _duration));
@@ -59,6 +75,7 @@ public class RouletteWheel : MonoBehaviour
         //float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
 
         float _time = 0;
+        OnSpinStart?.Invoke(this);
 
         while (_time < _duration)
         {
@@ -73,6 +90,8 @@ public class RouletteWheel : MonoBehaviour
         DetectSlot();
         _spinButton.interactable = true;
         _spinning = false;
+
+        OnSpinEnd?.Invoke(this);
     }
 
     private void DetectSlot()
@@ -84,8 +103,8 @@ public class RouletteWheel : MonoBehaviour
         Debug.Log($"Result={_result}");
     }
 
-    private float GetSpin(float _value)
-    {
-        return _value * 360;
-    }
+    //private float GetSpin(float _value)
+    //{
+    //    return _value * 360;
+    //}
 }
