@@ -21,11 +21,13 @@ public class RouletteWheel : MonoBehaviour
     public static event UnityAction<RouletteWheel> OnSpinStart = null;
     public static event UnityAction<RouletteWheel> OnSpinEnd = null;
 
-    private void Awake()
-    {
-        var _initialOffset = (360f / _numberOfSlots) / 2f;
-        _wheel.Rotate(0, 0, -_initialOffset);
-    }
+    public int NumberOfSlots { get => _numberOfSlots; }
+
+    //private void Awake()
+    //{
+    //    var _initialOffset = GetSlotAngle() / 2f;
+    //    _wheel.Rotate(0, 0, -_initialOffset);
+    //}
 
     private void OnEnable()
     {
@@ -97,10 +99,15 @@ public class RouletteWheel : MonoBehaviour
     private void DetectSlot()
     {
         float _angle = _wheel.eulerAngles.z;
-        float _slotAngle = 360f / _numberOfSlots;
+        float _slotAngle = GetSlotAngle();
         int _slot = Mathf.FloorToInt((_angle % 360) / _slotAngle);
         int _result = _numberOfSlots - _slot - 1;
         Debug.Log($"Result={_result}");
+    }
+
+    public float GetSlotAngle()
+    {
+        return 360f / _numberOfSlots;
     }
 
     //private float GetSpin(float _value)
