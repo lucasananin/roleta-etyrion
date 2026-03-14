@@ -23,11 +23,12 @@ public class RouletteWheel : MonoBehaviour
 
     public int NumberOfSlots { get => _numberOfSlots; }
 
-    //private void Awake()
-    //{
-    //    var _initialOffset = GetSlotAngle() / 2f;
-    //    _wheel.Rotate(0, 0, -_initialOffset);
-    //}
+    private IEnumerator Start()
+    {
+        yield return null;
+        var _initialOffset = -GetSlotAngle() / 2f;
+        _wheel.Rotate(0, 0, _initialOffset);
+    }
 
     private void OnEnable()
     {

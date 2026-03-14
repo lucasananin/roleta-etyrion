@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09b825861dd32e41a49b63f9e07dd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotBehaviour
+  _fill: {fileID: 5185347999172314358}
