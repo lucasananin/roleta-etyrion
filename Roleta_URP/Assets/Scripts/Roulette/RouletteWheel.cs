@@ -52,10 +52,8 @@ public class RouletteWheel : MonoBehaviour
 
     public void SpinRandomly()
     {
-        //float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
         float _speed = Random.Range(_minSpeed, _maxSpeed);
-        //float _duration = Random.Range(_minSpinTime, _maxSpinTime);
-        Spin(_speed/*, _duration*/);
+        Spin(_speed);
     }
 
     public void SpinNormalized(float _speedNormalized)
@@ -67,10 +65,9 @@ public class RouletteWheel : MonoBehaviour
             StartCoroutine(SpinRoutine(_speed, _duration));
     }
 
-    public void Spin(float _speed/*, float _duration*/)
+    public void Spin(float _speed)
     {
         _speed = Mathf.Clamp(_speed, _minSpeed, _maxSpeed);
-        //_duration = _minSpinTime + _speed / 1000f;
         var _speedNormalized = Mathf.InverseLerp(_minSpeed, _maxSpeed, _speed);
         var _duration = Mathf.Lerp(_minDuration, _maxDuration, _speedNormalized);
 
@@ -83,9 +80,6 @@ public class RouletteWheel : MonoBehaviour
         Debug.Log($"Speed = {_speed} / Duration = {_duration}");
         _spinning = true;
         _spinButton.interactable = false;
-
-        //float _duration = Random.Range(_minSpinTime, _maxSpinTime);
-        //float _speed = Random.Range(GetSpin(_minSpeed), GetSpin(_maxSpeed));
 
         float _time = 0;
         OnSpinStart?.Invoke(this);
@@ -120,9 +114,4 @@ public class RouletteWheel : MonoBehaviour
     {
         return 360f / _numberOfSlots;
     }
-
-    //private float GetSpin(float _value)
-    //{
-    //    return _value * 360;
-    //}
 }
