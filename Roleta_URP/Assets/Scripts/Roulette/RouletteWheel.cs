@@ -5,14 +5,15 @@ using UnityEngine.Events;
 
 public class RouletteWheel : MonoBehaviour
 {
+    [SerializeField] GameDataSO _so = null;
     [SerializeField] RectTransform _wheel = null;
     [SerializeField] Button _spinButton = null;
     [SerializeField] AnimationCurve _curve = null;
+
+    [Header("// RUNTIME")]
     [SerializeField] int _numberOfSlots = 8;
-    [Space]
     [SerializeField] float _minDuration = 15f;
     [SerializeField] float _maxDuration = 20f;
-    [Space]
     [SerializeField] float _minSpeed = 4f;
     [SerializeField] float _maxSpeed = 6f;
 
@@ -22,6 +23,15 @@ public class RouletteWheel : MonoBehaviour
     public static event UnityAction<RouletteWheel> OnSpinEnd = null;
 
     public int NumberOfSlots { get => _numberOfSlots; }
+
+    private void Awake()
+    {
+        _numberOfSlots = _so.NumberOfSlots;
+        _minDuration = _so.DurationRange.x;
+        _maxDuration = _so.DurationRange.y;
+        _minSpeed = _so.SpeedRange.x * 360f;
+        _maxSpeed = _so.SpeedRange.y * 360f;
+    }
 
     private IEnumerator Start()
     {

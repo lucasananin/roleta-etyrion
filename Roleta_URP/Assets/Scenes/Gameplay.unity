@@ -182,7 +182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &28208971
 RectTransform:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &356145782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1390,7 +1390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1029642315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1788,6 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf0de745d7b2784f959249a0a1ffd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RouletteWheel
+  _so: {fileID: 11400000, guid: 0cade859bfc5601429f29e00697c4fce, type: 2}
   _wheel: {fileID: 532223024}
   _spinButton: {fileID: 28208972}
   _curve:
