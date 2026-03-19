@@ -26,10 +26,18 @@ public class PauseView : CanvasView
         _resumeButton.onClick.RemoveListener(TogglePause);
     }
 
-    protected override void Update()
-    {
-        base.Update();
+    //protected override void Update()
+    //{
+    //    base.Update();
 
+    //    if (Input.GetKeyUp(KeyCode.Escape))
+    //    {
+    //        TogglePause();
+    //    }
+    //}
+
+    private void Update()
+    {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             TogglePause();
