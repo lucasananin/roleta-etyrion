@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &13440741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +838,12 @@ MonoBehaviour:
   _canvasGroup: {fileID: 356145784}
   _fadeDuration: 0.3
   _hideOnAwake: 1
+  _onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHide:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &356145784
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1092,7 +1098,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,6 +1709,12 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1029642317}
   _fadeDuration: 0.3
   _hideOnAwake: 0
+  _onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHide:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &1029642317
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2501,7 +2513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2133501484
 RectTransform:
   m_ObjectHideFlags: 0

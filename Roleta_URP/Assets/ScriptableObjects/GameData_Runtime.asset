@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe86d5867c82f64890e5fbdbd477c17, type: 3}
-  m_Name: GameDataSO
+  m_Name: GameData_Runtime
   m_EditorClassIdentifier: Assembly-CSharp::GameDataSO
   _numberOfSlots: 8
   _durationRange: {x: 15, y: 20}
