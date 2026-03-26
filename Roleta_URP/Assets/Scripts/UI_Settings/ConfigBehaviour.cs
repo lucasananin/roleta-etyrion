@@ -12,11 +12,13 @@ public abstract class ConfigBehaviour : MonoBehaviour
     protected void OnEnable()
     {
         DataLoader.OnRestored += UpdateVisuals;
+        DataLoader.OnLoaded += UpdateVisuals;
     }
 
     protected void OnDisable()
     {
         DataLoader.OnRestored -= UpdateVisuals;
+        DataLoader.OnLoaded -= UpdateVisuals;
     }
 
     public abstract void UpdateVisuals();

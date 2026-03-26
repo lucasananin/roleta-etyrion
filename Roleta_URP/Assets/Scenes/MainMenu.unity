@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec291a7228ff682459d41a4636f20541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RestoreDefaultConfig
+  _button: {fileID: 48587631}
 --- !u!1 &92391545
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,6 +5113,7 @@ GameObject:
   - component: {fileID: 1437098391}
   - component: {fileID: 1437098390}
   - component: {fileID: 1437098389}
+  - component: {fileID: 1437098392}
   m_Layer: 5
   m_Name: Button_Close
   m_TagString: Untagged
@@ -5233,6 +5235,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437098387}
   m_CullTransparentMesh: 1
+--- !u!114 &1437098392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437098387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99914b4c62c03546ac0fc400cd6e68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveConfig
+  _button: {fileID: 1437098389}
 --- !u!1 &1442112456
 GameObject:
   m_ObjectHideFlags: 0
