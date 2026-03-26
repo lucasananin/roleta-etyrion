@@ -1,18 +1,12 @@
 using TMPro;
 using UnityEngine;
 
-public class SpeedConfig : MonoBehaviour
+public class SpeedConfig : ConfigBehaviour
 {
-    [SerializeField] GameDataSO _runtimeSO = null;
     [SerializeField] TextMeshProUGUI _minTxt = null;
     [SerializeField] TextMeshProUGUI _maxTxt = null;
     [SerializeField] int _minSpeed = 4;
     [SerializeField] int _maxSpeed = 6;
-
-    private void Awake()
-    {
-        UpdateVisuals();
-    }
 
     public void IncreaseMin(int _value)
     {
@@ -30,7 +24,7 @@ public class SpeedConfig : MonoBehaviour
         UpdateVisuals();
     }
 
-    public void UpdateVisuals()
+    public override void UpdateVisuals()
     {
         _minTxt.text = $"{_runtimeSO.SpeedRange.x}";
         _maxTxt.text = $"{_runtimeSO.SpeedRange.y}";

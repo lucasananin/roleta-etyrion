@@ -1,18 +1,12 @@
 using TMPro;
 using UnityEngine;
 
-public class DurationConfig : MonoBehaviour
+public class DurationConfig : ConfigBehaviour
 {
-    [SerializeField] GameDataSO _runtimeSO = null;
     [SerializeField] TextMeshProUGUI _minTxt = null;
     [SerializeField] TextMeshProUGUI _maxTxt = null;
     [SerializeField] int _minDuration = 10;
     [SerializeField] int _maxDuration = 30;
-
-    private void Awake()
-    {
-        UpdateVisuals();
-    }
 
     public void IncreaseMin(int _value)
     {
@@ -30,7 +24,7 @@ public class DurationConfig : MonoBehaviour
         UpdateVisuals();
     }
 
-    public void UpdateVisuals()
+    public override void UpdateVisuals()
     {
         _minTxt.text = $"{_runtimeSO.DurationRange.x}";
         _maxTxt.text = $"{_runtimeSO.DurationRange.y}";
