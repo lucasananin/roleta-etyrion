@@ -18,11 +18,13 @@ public class RouletteWheel : MonoBehaviour
     [SerializeField] float _maxSpeed = 6f;
 
     private bool _spinning = false;
+    private int _result = 0;
 
     public static event UnityAction<RouletteWheel> OnSpinStart = null;
     public static event UnityAction<RouletteWheel> OnSpinEnd = null;
 
     public int NumberOfSlots { get => _numberOfSlots; }
+    public int Result { get => _result; }
 
     private void Awake()
     {
@@ -106,7 +108,7 @@ public class RouletteWheel : MonoBehaviour
         float _angle = _wheel.eulerAngles.z;
         float _slotAngle = GetSlotAngle();
         int _slot = Mathf.FloorToInt((_angle % 360) / _slotAngle);
-        int _result = _numberOfSlots - _slot - 1;
+        _result = _numberOfSlots - _slot - 1;
         Debug.Log($"Result={_result}");
     }
 
