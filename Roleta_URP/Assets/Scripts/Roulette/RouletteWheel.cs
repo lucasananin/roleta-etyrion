@@ -60,6 +60,7 @@ public class RouletteWheel : MonoBehaviour
 
     public void SpinNormalized(float _speedNormalized)
     {
+        // add some randomness.
         var _speed = Mathf.Lerp(_minSpeed, _maxSpeed, _speedNormalized);
         var _duration = Mathf.Lerp(_minDuration, _maxDuration, _speedNormalized);
 
@@ -109,7 +110,7 @@ public class RouletteWheel : MonoBehaviour
         float _slotAngle = GetSlotAngle();
         int _slot = Mathf.FloorToInt((_angle % 360) / _slotAngle);
         _result = _numberOfSlots - _slot - 1;
-        Debug.Log($"Result={_result}");
+        //Debug.Log($"Result={_result}");
     }
 
     public float GetSlotAngle()
