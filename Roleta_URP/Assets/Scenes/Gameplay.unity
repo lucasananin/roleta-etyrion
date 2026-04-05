@@ -1375,6 +1375,7 @@ GameObject:
   - component: {fileID: 525570749}
   - component: {fileID: 525570748}
   - component: {fileID: 525570750}
+  - component: {fileID: 525570751}
   m_Layer: 5
   m_Name: Image_Background
   m_TagString: Untagged
@@ -1453,6 +1454,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 4
   m_AspectRatio: 1
+--- !u!114 &525570751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525570746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b71992b6e222ac48a9ba01aa4f4661a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadImageToUIImage
+  targetImage: {fileID: 525570748}
+  _fileName: Background
+  preserveAspect: 1
 --- !u!1 &532223023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,13 +1519,14 @@ GameObject:
   - component: {fileID: 535765970}
   - component: {fileID: 535765972}
   - component: {fileID: 535765971}
+  - component: {fileID: 535765973}
   m_Layer: 5
   m_Name: Image_Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &535765970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1567,6 +1584,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535765969}
   m_CullTransparentMesh: 1
+--- !u!114 &535765973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535765969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b71992b6e222ac48a9ba01aa4f4661a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadImageToUIImage
+  targetImage: {fileID: 535765971}
+  _fileName: Logo
+  preserveAspect: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,8 +1945,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadPNGToUIImage
   targetImage: {fileID: 525570748}
+  _fileName: 
   preserveAspect: 1
-  setNativeSize: 0
 --- !u!1 &746398395
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +2033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.078431375, b: 0.5764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2229,7 +2261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123
+  m_text: 12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2982,7 +3014,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 920578259}
   - {fileID: 250178783}

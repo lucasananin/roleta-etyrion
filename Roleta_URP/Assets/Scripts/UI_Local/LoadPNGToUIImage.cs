@@ -10,20 +10,24 @@ using UnityEditor;
 
 public class LoadImageToUIImage : MonoBehaviour
 {
-    [Header("Target UI Image")]
-    public Image targetImage;
+    [SerializeField] Image targetImage;
+    [SerializeField] string _fileName = null;
 
     [Header("Options")]
     public bool preserveAspect = true;
-    public bool setNativeSize = true;
+    //public bool setNativeSize = true;
 
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return new WaitForSeconds(1f);
         LoadImage();
     }
 
-    // Call from UI Button
+    //private IEnumerator Start()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    LoadImage();
+    //}
+
     public void LoadImage()
     {
         string path = GetFilePath();
@@ -57,7 +61,7 @@ public class LoadImageToUIImage : MonoBehaviour
         {
             byte[] fileData = File.ReadAllBytes(path);
 
-            Texture2D texture = new Texture2D(
+            Texture2D texture = new(
                 2,
                 2,
                 TextureFormat.RGBA32,
@@ -101,23 +105,24 @@ public class LoadImageToUIImage : MonoBehaviour
         if (preserveAspect)
             targetImage.preserveAspect = true;
 
-        if (setNativeSize)
-            targetImage.SetNativeSize();
+        //if (setNativeSize)
+        //    targetImage.SetNativeSize();
     }
 
     string GetFilePath()
     {
 #if UNITY_EDITOR
-        return EditorUtility.OpenFilePanel(
-            "Select Image",
-            "",
-            "png,jpg,jpeg,bmp,tga,gif"
-        );
+        //return EditorUtility.OpenFilePanel(
+        //    "Select Image",
+        //    "",
+        //    "png,jpg,jpeg,bmp,tga,gif"
+        //);
+        string projectRoot = Directory.GetParent(Application.dataPath).FullName;
+        return Path.Combine(projectRoot, $"{_fileName}.png");
 #else
-        Debug.LogWarning(
-            "Runtime file picker not implemented. Use a file browser plugin for builds."
-        );
-        return null;
+        return Path.Combine(Application.dataPath, "..", $"{_fileName}.png");
+        //Debug.LogWarning("Runtime file picker not implemented. Use a file browser plugin for builds.");
+        //return null;
 #endif
     }
 }
