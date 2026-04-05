@@ -60,9 +60,8 @@ public class RouletteWheel : MonoBehaviour
 
     public void SpinNormalized(float _speedNormalized)
     {
-        // add some randomness.
         var _speed = Mathf.Lerp(_minSpeed, _maxSpeed, _speedNormalized);
-        var _duration = Mathf.Lerp(_minDuration, _maxDuration, _speedNormalized);
+        var _duration = Mathf.Lerp(_minDuration, _maxDuration, Random.Range(0f, 1f));
 
         if (!_spinning)
             StartCoroutine(SpinRoutine(_speed, _duration));
