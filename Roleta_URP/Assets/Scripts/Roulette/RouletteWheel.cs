@@ -16,6 +16,7 @@ public class RouletteWheel : MonoBehaviour
     [SerializeField] float _maxDuration = 20f;
     [SerializeField] float _minSpeed = 4f;
     [SerializeField] float _maxSpeed = 6f;
+    [SerializeField] float _timeBetweenSlots = 0;
 
     private bool _spinning = false;
     private int _result = 0;
@@ -24,7 +25,9 @@ public class RouletteWheel : MonoBehaviour
     public static event UnityAction<RouletteWheel> OnSpinEnd = null;
 
     public int NumberOfSlots { get => _numberOfSlots; }
+    public bool Spinning { get => _spinning; }
     public int Result { get => _result; }
+    public float TimeBetweenSlots { get => _timeBetweenSlots; }
 
     private void Awake()
     {
@@ -93,6 +96,10 @@ public class RouletteWheel : MonoBehaviour
             float _currentSpeed = Mathf.Lerp(_speed, 0, _c);
             _wheel.Rotate(0, 0, -_currentSpeed * Time.deltaTime);
             _time += Time.deltaTime;
+
+            _timeBetweenSlots = GetTimeBetweenSlots(NumberOfSlots, _currentSpeed, _curve);
+            Debug.Log($"{_timeBetweenSlots}");
+
             yield return null;
         }
 
@@ -115,5 +122,46 @@ public class RouletteWheel : MonoBehaviour
     public float GetSlotAngle()
     {
         return 360f / _numberOfSlots;
+    }
+
+    private float GetTimeBetweenSlots(int numeroDeCasas, float velocidadeAtual, AnimationCurve desaceleracao, float precision = 0.001f)
+    {
+        if (numeroDeCasas <= 0)
+            return 0f;
+
+        if (velocidadeAtual <= 0f)
+            return Mathf.Infinity;
+
+        if (desaceleracao == null)
+            return Mathf.Infinity;
+
+        float anguloSlot = 360f / numeroDeCasas;
+
+        float tempo = 0f;
+        float anguloAcumulado = 0f;
+
+        float velocidadeInicial = velocidadeAtual;
+
+        while (anguloAcumulado < anguloSlot)
+        {
+            tempo += precision;
+
+            // tempo normalizado (0 -> 1)
+            float tNormalizado = desaceleracao.Evaluate(tempo);
+
+            // velocidade atual baseada na curva
+            float velocidade = velocidadeInicial * tNormalizado;
+
+            if (velocidade <= 0f)
+                return Mathf.Infinity;
+
+            anguloAcumulado += velocidade * precision;
+
+            // proteção contra loop infinito
+            if (tempo > 30f)
+                return Mathf.Infinity;
+        }
+
+        return tempo;
     }
 }

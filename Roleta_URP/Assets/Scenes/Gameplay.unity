@@ -2968,6 +2968,7 @@ GameObject:
   - component: {fileID: 1496739230}
   - component: {fileID: 1496739231}
   - component: {fileID: 1496739232}
+  - component: {fileID: 1496739233}
   m_Layer: 5
   m_Name: Panel_Wheel
   m_TagString: Untagged
@@ -3042,6 +3043,7 @@ MonoBehaviour:
   _maxDuration: 20
   _minSpeed: 1440
   _maxSpeed: 2160
+  _timeBetweenSlots: 0
 --- !u!114 &1496739232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3059,6 +3061,22 @@ MonoBehaviour:
   _parent: {fileID: 321631458}
   _iconPrefab: {fileID: 7225153344420987414, guid: 37721e22e3cd4ad4d933c9afa1589621, type: 3}
   _iconParent: {fileID: 746398396}
+--- !u!114 &1496739233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496739229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcce35a00aad4a4ea050c08240e9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpinSFX
+  _so: {fileID: 11400000, guid: 9d4b8a1938813da4e9e92e5bbee6ae4a, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _wheel: {fileID: 1496739231}
 --- !u!1 &1546922795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,7 +3282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1753177834
 MonoBehaviour:
   m_ObjectHideFlags: 0

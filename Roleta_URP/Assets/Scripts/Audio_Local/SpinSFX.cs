@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class SpinSFX : MonoBehaviour
+public class SpinSFX : AudioPlayer
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] RouletteWheel _wheel = null;
 
-    // Update is called once per frame
-    void Update()
+    private float _nextPlay = 0f;
+
+    private void LateUpdate()
     {
-        
+        if (_wheel.Spinning)
+        {
+            _nextPlay += Time.deltaTime;
+
+            if (_nextPlay > _wheel.TimeBetweenSlots)
+            {
+                _nextPlay = 0;
+                Play();
+            }
+        }
     }
 }
