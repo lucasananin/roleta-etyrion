@@ -98,7 +98,7 @@ public class RouletteWheel : MonoBehaviour
             _time += Time.deltaTime;
 
             _timeBetweenSlots = GetTimeBetweenSlots(NumberOfSlots, _currentSpeed, _curve);
-            Debug.Log($"{_timeBetweenSlots}");
+            //Debug.Log($"{_timeBetweenSlots}");
 
             yield return null;
         }

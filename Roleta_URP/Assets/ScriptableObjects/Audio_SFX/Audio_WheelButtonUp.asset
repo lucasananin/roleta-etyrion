@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d518180a961b5144a5c148621b967b7, type: 3}
-  m_Name: Audio_WheelButton
+  m_Name: Audio_WheelButtonUp
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
-  _clip: {fileID: 8300000, guid: c2ff3de159c51314a8bc250207dfe418, type: 3}
+  _clip: {fileID: 8300000, guid: a43055fccc70887419b3948629353975, type: 3}
   _output: {fileID: 0}
   _isMusic: 0
   _bypassEffects: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   _ignoreListenerPause: 0
   _loop: 0
   _priorityLevel: 128
-  _volume: 1
+  _volume: 0
   _pitchRange: {x: 1, y: 1}
   _panStereo: 0
   _reverbZoneMix: 1
