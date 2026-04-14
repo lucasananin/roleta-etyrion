@@ -23,7 +23,7 @@ MonoBehaviour:
   _loop: 0
   _priorityLevel: 128
   _volume: 0.5
-  _pitchRange: {x: 0.8, y: 1.2}
+  _pitchRange: {x: 0.9, y: 1.1}
   _panStereo: 0
   _reverbZoneMix: 1
   _time: 0

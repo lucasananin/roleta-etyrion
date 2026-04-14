@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameDataSO
   _numberOfSlots: 8
   _durationRange: {x: 15, y: 20}
-  _speedRange: {x: 4, y: 6}
+  _speedRange: {x: 2, y: 4}
