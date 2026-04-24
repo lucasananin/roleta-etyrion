@@ -3218,6 +3218,10 @@ MonoBehaviour:
   _parent: {fileID: 321631458}
   _iconPrefab: {fileID: 7225153344420987414, guid: 37721e22e3cd4ad4d933c9afa1589621, type: 3}
   _iconParent: {fileID: 746398396}
+  _initialColor: {r: 0.4196079, g: 0.5568628, b: 0.1372549, a: 1}
+  _colorList:
+  - {r: 0.8627452, g: 0.07843138, b: 0.2352941, a: 1}
+  - {r: 0.2, g: 0.2, b: 0.2, a: 1}
 --- !u!114 &1496739233
 MonoBehaviour:
   m_ObjectHideFlags: 0
