@@ -16,7 +16,7 @@ public class ResolutionConfig : MonoBehaviour
     void Start()
     {
         InitializeResolutions();
-        //InitializeFullscreen();
+        InitializeFullscreen();
     }
 
     void InitializeResolutions()
@@ -63,7 +63,7 @@ public class ResolutionConfig : MonoBehaviour
     {
         if (fullscreenToggle != null)
         {
-            fullscreenToggle.isOn = Screen.fullScreen;
+            //fullscreenToggle.isOn = Screen.fullScreen;
             fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
         }
     }
