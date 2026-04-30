@@ -6,7 +6,7 @@ public class VSyncConfig : MonoBehaviour
     [Header("Optional UI")]
     [SerializeField] Toggle _vsyncToggle;
 
-    void Start()
+    private void Start()
     {
         // Initialize toggle state based on current VSync setting
         if (_vsyncToggle != null)
@@ -14,6 +14,11 @@ public class VSyncConfig : MonoBehaviour
             _vsyncToggle.isOn = (QualitySettings.vSyncCount > 0);
             _vsyncToggle.onValueChanged.AddListener(SetVSync);
         }
+    }
+
+    private void OnDisable()
+    {
+        _vsyncToggle.onValueChanged.RemoveListener(SetVSync);
     }
 
     /// <summary>

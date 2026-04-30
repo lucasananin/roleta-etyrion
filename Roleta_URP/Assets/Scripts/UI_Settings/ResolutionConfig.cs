@@ -10,37 +10,43 @@ public class ResolutionConfig : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     public Toggle fullscreenToggle; // optional
 
-    private Resolution[] resolutions;
-    private List<Resolution> uniqueResolutions = new List<Resolution>();
+    private Resolution[] _resolutions;
+    private List<Resolution> _uniqueResolutions = new();
 
-    void Start()
+    private void Start()
     {
         InitializeResolutions();
         InitializeFullscreen();
     }
 
+    private void OnDisable()
+    {
+        resolutionDropdown.onValueChanged.RemoveListener(SetResolution);
+        fullscreenToggle.onValueChanged.RemoveListener(SetFullscreen);
+    }
+
     void InitializeResolutions()
     {
-        resolutions = Screen.resolutions;
+        _resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
-        uniqueResolutions.Clear();
+        _uniqueResolutions.Clear();
 
         // Remove duplicate resolutions (same width/height)
-        uniqueResolutions = resolutions
+        _uniqueResolutions = _resolutions
             .GroupBy(r => new { r.width, r.height })
             .Select(g => g.First())
             .OrderBy(r => r.width)
             .ThenBy(r => r.height)
             .ToList();
 
-        List<string> options = new List<string>();
+        List<string> options = new();
 
         int currentResolutionIndex = 0;
 
-        for (int i = 0; i < uniqueResolutions.Count; i++)
+        for (int i = 0; i < _uniqueResolutions.Count; i++)
         {
-            Resolution res = uniqueResolutions[i];
+            Resolution res = _uniqueResolutions[i];
 
             string option = res.width + " x " + res.height;
             options.Add(option);
@@ -70,7 +76,7 @@ public class ResolutionConfig : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution res = uniqueResolutions[resolutionIndex];
+        Resolution res = _uniqueResolutions[resolutionIndex];
 
         Screen.SetResolution(
             res.width,

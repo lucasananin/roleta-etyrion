@@ -5483,7 +5483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: b4654a7fbc34dc941afa5a87f1a36b5a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6093,13 +6093,14 @@ GameObject:
   - component: {fileID: 1029795919}
   - component: {fileID: 1029795922}
   - component: {fileID: 1029795921}
+  - component: {fileID: 1029795923}
   m_Layer: 5
   m_Name: Settings_Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1029795919
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6116,10 +6117,10 @@ RectTransform:
   - {fileID: 367810792}
   m_Father: {fileID: 1339211163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 951.5, y: -280}
-  m_SizeDelta: {x: 1903, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029795921
 MonoBehaviour:
@@ -6159,6 +6160,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029795918}
   m_CullTransparentMesh: 1
+--- !u!114 &1029795923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029795918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c1ac602d2007c4ebde6cc410d98b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
+  _audioToggle: {fileID: 367810793}
 --- !u!1 &1050354951
 GameObject:
   m_ObjectHideFlags: 0
@@ -9533,7 +9547,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: b4654a7fbc34dc941afa5a87f1a36b5a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13094,7 +13108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 951.5, y: -500}
+  m_AnchoredPosition: {x: 951.5, y: -20}
   m_SizeDelta: {x: 1903, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031728297
