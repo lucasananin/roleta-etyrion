@@ -1,11 +1,11 @@
 {
-    "numberOfSlots": 8,
+    "numberOfSlots": 16,
     "durationRange": {
-        "x": 15.0,
-        "y": 20.0
+        "x": 24.0,
+        "y": 28.0
     },
     "speedRange": {
-        "x": 2.0,
-        "y": 4.0
+        "x": 1.0,
+        "y": 2.0
     }
 }
