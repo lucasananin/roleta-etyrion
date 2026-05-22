@@ -3,20 +3,41 @@ using UnityEngine;
 public class SpinSFX : AudioPlayer
 {
     [SerializeField] RouletteWheel _wheel = null;
+    [SerializeField] int _playRate = 2;
 
-    private float _nextPlay = 0f;
+    private int _nextPlay = 0;
 
-    private void LateUpdate()
+    private void OnEnable()
     {
-        if (_wheel.Spinning)
-        {
-            _nextPlay += Time.deltaTime;
+        _wheel.OnSlotChanged += TryPlay;
+    }
 
-            if (_nextPlay > _wheel.TimeBetweenSlots)
-            {
-                _nextPlay = 0;
-                Play();
-            }
+    private void OnDisable()
+    {
+        _wheel.OnSlotChanged -= TryPlay;
+    }
+
+    private void TryPlay()
+    {
+        _nextPlay++;
+        if (_nextPlay >= _playRate)
+        {
+            _nextPlay = 0;
+            Play();
         }
     }
+
+    //private void LateUpdate()
+    //{
+    //    if (_wheel.Spinning)
+    //    {
+    //        _nextPlay += Time.deltaTime;
+
+    //        if (_nextPlay > _wheel.TimeBetweenSlots)
+    //        {
+    //            _nextPlay = 0;
+    //            Play();
+    //        }
+    //    }
+    //}
 }

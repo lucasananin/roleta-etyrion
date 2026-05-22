@@ -23,11 +23,12 @@ public class RouletteWheel : MonoBehaviour
 
     public static event UnityAction<RouletteWheel> OnSpinStart = null;
     public static event UnityAction<RouletteWheel> OnSpinEnd = null;
+    public event UnityAction OnSlotChanged = null;
 
     public int NumberOfSlots { get => _numberOfSlots; }
     public bool Spinning { get => _spinning; }
     public int Result { get => _result; }
-    public float TimeBetweenSlots { get => _timeBetweenSlots; }
+    //public float TimeBetweenSlots { get => _timeBetweenSlots; }
 
     private void Awake()
     {
@@ -80,24 +81,36 @@ public class RouletteWheel : MonoBehaviour
             StartCoroutine(SpinRoutine(_speed, _duration));
     }
 
+    public float _totalAngle = 0;
+
     private IEnumerator SpinRoutine(float _speed, float _duration)
     {
         Debug.Log($"Speed = {_speed} / Duration = {_duration}");
         _spinning = true;
         _spinButton.interactable = false;
+        _totalAngle = 0;
 
         float _time = 0;
         OnSpinStart?.Invoke(this);
 
         while (_time < _duration)
         {
+            var _previousAngle = _wheel.eulerAngles.z;
             float _t = _time / _duration;
             var _c = _curve.Evaluate(_t);
             float _currentSpeed = Mathf.Lerp(_speed, 0, _c);
             _wheel.Rotate(0, 0, -_currentSpeed * Time.deltaTime);
             _time += Time.deltaTime;
 
-            _timeBetweenSlots = GetTimeBetweenSlots(NumberOfSlots, _currentSpeed, _curve);
+            _totalAngle += Mathf.Abs(_wheel.eulerAngles.z - _previousAngle);
+            if (_totalAngle > GetSlotAngle())
+            {
+                _totalAngle = 0;
+                OnSlotChanged?.Invoke();
+                Debug.Log($"Slot");
+            }
+
+            //_timeBetweenSlots = GetTimeBetweenSlots(NumberOfSlots, _currentSpeed, _curve);
             //Debug.Log($"{_timeBetweenSlots}");
 
             yield return null;
