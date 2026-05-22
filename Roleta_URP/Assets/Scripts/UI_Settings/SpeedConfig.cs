@@ -5,10 +5,10 @@ public class SpeedConfig : ConfigBehaviour
 {
     [SerializeField] TextMeshProUGUI _minTxt = null;
     [SerializeField] TextMeshProUGUI _maxTxt = null;
-    [SerializeField] int _minSpeed = 4;
-    [SerializeField] int _maxSpeed = 6;
+    [SerializeField] float _minSpeed = 4;
+    [SerializeField] float _maxSpeed = 6;
 
-    public void IncreaseMin(int _value)
+    public void IncreaseMin(float _value)
     {
         var _newValue = _runtimeSO.SpeedRange.x + _value;
         var _clampedValue = Mathf.Clamp(_newValue, _minSpeed, _maxSpeed);
@@ -16,7 +16,7 @@ public class SpeedConfig : ConfigBehaviour
         UpdateVisuals();
     }
 
-    public void IncreaseMax(int _value)
+    public void IncreaseMax(float _value)
     {
         var _newValue = _runtimeSO.SpeedRange.y + _value;
         var _clampedValue = Mathf.Clamp(_newValue, _minSpeed, _maxSpeed);
