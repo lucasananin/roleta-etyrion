@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e62f38e6141a6b74eb7ec4b28942f1dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc1ba5f81e0437e4b8ae2f0305470ce8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6aa66ac043a004b86d5b7fd30d4812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PingPongScaleVFX
-  _minScale: {x: 0.5, y: 0.5, z: 0.5}
+  _minScale: {x: 0.8, y: 0.8, z: 0.8}
   _maxScale: {x: 1.2, y: 1.2, z: 1.2}
   _speed: 1

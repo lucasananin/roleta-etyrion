@@ -6,6 +6,7 @@ public class PingPongScaleVFX : MonoBehaviour
     [SerializeField] Vector3 _maxScale = Vector3.one;
     //[SerializeField] AnimationCurve _curve = null;
     [SerializeField] float _speed = 1f;
+    [SerializeField, Range(0, 1)] float _startTimer = 0f;
 
     private float _timer = 0f;
     private float _t = 0f;
@@ -13,7 +14,8 @@ public class PingPongScaleVFX : MonoBehaviour
 
     private void Awake()
     {
-        _timer = Random.Range(0f, 1f);
+        //_timer = Random.Range(0f, 1f);
+        _timer = _startTimer;
     }
 
     private void Update()

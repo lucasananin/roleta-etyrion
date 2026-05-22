@@ -25,7 +25,7 @@ public class SlotSpawner : MonoBehaviour
             var _rotation = Quaternion.Euler((i + 1) * _slotAngle * Vector3.forward);
             var _slot = Instantiate(_prefab, _parent.position, _rotation, _parent);
 
-            var _index = (int)Mathf.Repeat(i, _colorList.Count);
+            var _index = (int)Mathf.Repeat(i - 1, _colorList.Count);
             var _color = i == 0 ? _initialColor : _colorList[_index];
             _slot.Init(_wheel.NumberOfSlots, _color);
 

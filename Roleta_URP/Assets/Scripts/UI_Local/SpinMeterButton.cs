@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,6 +10,11 @@ public class SpinMeterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] CanvasView _mainView = null;
     [SerializeField] CanvasView _fillView = null;
     [SerializeField] float _speed = 1f;
+    [Space]
+    [SerializeField] TextMeshProUGUI _text = null;
+    [SerializeField] string _holdString = "Segure!";
+    [SerializeField] string _looseString = "Solte!";
+
 
     private float _timer = 0f;
     private bool _isHolding = false;
@@ -59,6 +65,7 @@ public class SpinMeterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         _isHolding = true;
         ResetValues();
+        _text.text = _looseString;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -76,5 +83,6 @@ public class SpinMeterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         _timer = 0;
         _fill.fillAmount = 0;
+        _text.text = _holdString;
     }
 }

@@ -8815,7 +8815,7 @@ MonoBehaviour:
   _runtimeSO: {fileID: 11400000, guid: 0cade859bfc5601429f29e00697c4fce, type: 2}
   _minTxt: {fileID: 1574974012}
   _maxTxt: {fileID: 248504769}
-  _minDuration: 10
+  _minDuration: 15
   _maxDuration: 30
 --- !u!114 &743698979
 MonoBehaviour:
@@ -20679,8 +20679,8 @@ MonoBehaviour:
   _runtimeSO: {fileID: 11400000, guid: 0cade859bfc5601429f29e00697c4fce, type: 2}
   _minTxt: {fileID: 1579099841}
   _maxTxt: {fileID: 2089396561}
-  _minSpeed: 4
-  _maxSpeed: 6
+  _minSpeed: 1
+  _maxSpeed: 5
 --- !u!114 &1869426591
 MonoBehaviour:
   m_ObjectHideFlags: 0
