@@ -28,7 +28,6 @@ public class RouletteWheel : MonoBehaviour
     public int NumberOfSlots { get => _numberOfSlots; }
     public bool Spinning { get => _spinning; }
     public int Result { get => _result; }
-    //public float TimeBetweenSlots { get => _timeBetweenSlots; }
 
     private void Awake()
     {
@@ -107,11 +106,7 @@ public class RouletteWheel : MonoBehaviour
             {
                 _totalAngle = 0;
                 OnSlotChanged?.Invoke();
-                Debug.Log($"Slot");
             }
-
-            //_timeBetweenSlots = GetTimeBetweenSlots(NumberOfSlots, _currentSpeed, _curve);
-            //Debug.Log($"{_timeBetweenSlots}");
 
             yield return null;
         }
@@ -129,52 +124,10 @@ public class RouletteWheel : MonoBehaviour
         float _slotAngle = GetSlotAngle();
         int _slot = Mathf.FloorToInt((_angle % 360) / _slotAngle);
         _result = _numberOfSlots - _slot - 1;
-        //Debug.Log($"Result={_result}");
     }
 
     public float GetSlotAngle()
     {
         return 360f / _numberOfSlots;
-    }
-
-    private float GetTimeBetweenSlots(int numeroDeCasas, float velocidadeAtual, AnimationCurve desaceleracao, float precision = 0.001f)
-    {
-        if (numeroDeCasas <= 0)
-            return 0f;
-
-        if (velocidadeAtual <= 0f)
-            return Mathf.Infinity;
-
-        if (desaceleracao == null)
-            return Mathf.Infinity;
-
-        float anguloSlot = 360f / numeroDeCasas;
-
-        float tempo = 0f;
-        float anguloAcumulado = 0f;
-
-        float velocidadeInicial = velocidadeAtual;
-
-        while (anguloAcumulado < anguloSlot)
-        {
-            tempo += precision;
-
-            // tempo normalizado (0 -> 1)
-            float tNormalizado = desaceleracao.Evaluate(tempo);
-
-            // velocidade atual baseada na curva
-            float velocidade = velocidadeInicial * tNormalizado;
-
-            if (velocidade <= 0f)
-                return Mathf.Infinity;
-
-            anguloAcumulado += velocidade * precision;
-
-            // proteção contra loop infinito
-            if (tempo > 30f)
-                return Mathf.Infinity;
-        }
-
-        return tempo;
     }
 }

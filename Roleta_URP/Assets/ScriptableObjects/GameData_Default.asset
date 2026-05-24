@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GameData_Default
   m_EditorClassIdentifier: Assembly-CSharp::GameDataSO
   _numberOfSlots: 16
-  _durationRange: {x: 25, y: 30}
+  _durationRange: {x: 30, y: 45}
   _speedRange: {x: 0.5, y: 1}

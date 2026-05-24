@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 3cd2672fff16ca34bbe0816afa2047cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4365834185225386359
+    second: Etyrion_Logo_0
+  - first:
+      213: 6712090238373370562
+    second: Etyrion_Logo_1
+  - first:
+      213: 4994703165733908754
+    second: Etyrion_Logo_2
+  - first:
+      213: 469922114519740997
+    second: Etyrion_Logo_3
+  - first:
+      213: 179066851501315307
+    second: Etyrion_Logo_4
+  - first:
+      213: 7769963126447220327
+    second: Etyrion_Logo_5
+  - first:
+      213: 693470432622784711
+    second: Etyrion_Logo_6
+  - first:
+      213: -5582973769292116095
+    second: Etyrion_Logo_7
+  - first:
+      213: 5342943152640334765
+    second: Etyrion_Logo_8
+  - first:
+      213: -8674267769985187426
+    second: Etyrion_Logo_9
+  - first:
+      213: -6881767049344787169
+    second: Etyrion_Logo_10
+  - first:
+      213: -2940102468764835199
+    second: Etyrion_Logo_11
+  - first:
+      213: -4085172384371239278
+    second: Etyrion_Logo_12
+  - first:
+      213: 486298612827086236
+    second: Etyrion_Logo_13
+  - first:
+      213: 5486799951259107554
+    second: Etyrion_Logo_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Etyrion_Logo_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 92
+        width: 145
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779bd9e6f0f869c30800000000000000
+      internalID: 4365834185225386359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca9c967282262d50800000000000000
+      internalID: 6712090238373370562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 30
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 211b610f010c05540800000000000000
+      internalID: 4994703165733908754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 30
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542bc046caf758600800000000000000
+      internalID: 469922114519740997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 30
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be498ca4a5c2c7200800000000000000
+      internalID: 179066851501315307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_5
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 30
+        width: 20
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76625c5eb4474db60800000000000000
+      internalID: 7769963126447220327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 29
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0b7be2fa3bf9900800000000000000
+      internalID: 693470432622784711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 30
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f050bcfea4582b0800000000000000
+      internalID: -5582973769292116095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab9b3c3d72f52a40800000000000000
+      internalID: 5342943152640334765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_9
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91c963eb6fce9780800000000000000
+      internalID: -8674267769985187426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_10
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dd0dc645d0f70a0800000000000000
+      internalID: -6881767049344787169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_11
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 182e50ac168a237d0800000000000000
+      internalID: -2940102468764835199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_12
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296115f4c5d8e47c0800000000000000
+      internalID: -4085172384371239278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_13
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9dd258030eafb600800000000000000
+      internalID: 486298612827086236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Etyrion_Logo_14
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e00e604c77052c40800000000000000
+      internalID: 5486799951259107554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Etyrion_Logo_0: 4365834185225386359
+      Etyrion_Logo_1: 6712090238373370562
+      Etyrion_Logo_10: -6881767049344787169
+      Etyrion_Logo_11: -2940102468764835199
+      Etyrion_Logo_12: -4085172384371239278
+      Etyrion_Logo_13: 486298612827086236
+      Etyrion_Logo_14: 5486799951259107554
+      Etyrion_Logo_2: 4994703165733908754
+      Etyrion_Logo_3: 469922114519740997
+      Etyrion_Logo_4: 179066851501315307
+      Etyrion_Logo_5: 7769963126447220327
+      Etyrion_Logo_6: 693470432622784711
+      Etyrion_Logo_7: -5582973769292116095
+      Etyrion_Logo_8: 5342943152640334765
+      Etyrion_Logo_9: -8674267769985187426
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

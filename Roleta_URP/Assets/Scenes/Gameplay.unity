@@ -2463,8 +2463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PointerAnim
   _wheel: {fileID: 1659395403}
-  _playRate: 2
+  _playRate: 1
   _zRotation: 15
+  _speedMultiplier: 0.1
 --- !u!1 &700661899
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,18 +26,4 @@ public class SpinSFX : AudioPlayer
             Play();
         }
     }
-
-    //private void LateUpdate()
-    //{
-    //    if (_wheel.Spinning)
-    //    {
-    //        _nextPlay += Time.deltaTime;
-
-    //        if (_nextPlay > _wheel.TimeBetweenSlots)
-    //        {
-    //            _nextPlay = 0;
-    //            Play();
-    //        }
-    //    }
-    //}
 }
