@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d518180a961b5144a5c148621b967b7, type: 3}
   m_Name: Audio_Music
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
-  _clip: {fileID: 8300000, guid: 57cb9bce243a3644898eff4f7a3f5b4f, type: 3}
+  _clip: {fileID: 8300000, guid: 61cb60d759c121d429de2e0f0b1a7543, type: 3}
   _output: {fileID: 0}
   _isMusic: 1
   _bypassEffects: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   _ignoreListenerPause: 0
   _loop: 1
   _priorityLevel: 128
-  _volume: 1
+  _volume: 0.5
   _pitchRange: {x: 1, y: 1}
   _panStereo: 0
   _reverbZoneMix: 1

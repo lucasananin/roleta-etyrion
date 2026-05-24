@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d518180a961b5144a5c148621b967b7, type: 3}
   m_Name: Audio_WheelSpin
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
-  _clip: {fileID: 8300000, guid: 1ed49922916c4c34d9f1f594a94306dc, type: 3}
+  _clip: {fileID: 8300000, guid: a8dcee43b629797448341bc6cea7592e, type: 3}
   _output: {fileID: 0}
   _isMusic: 0
   _bypassEffects: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   _loop: 0
   _priorityLevel: 128
   _volume: 0.5
-  _pitchRange: {x: 0.9, y: 1.1}
+  _pitchRange: {x: 1, y: 1}
   _panStereo: 0
   _reverbZoneMix: 1
   _time: 0
