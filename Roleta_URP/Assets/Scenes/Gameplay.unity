@@ -5528,7 +5528,7 @@ MonoBehaviour:
   _playOnStart: 0
   _stopOnDisable: 0
   _wheel: {fileID: 1659395403}
-  _playRate: 2
+  _playRate: 1
 --- !u!114 &1659395402
 MonoBehaviour:
   m_ObjectHideFlags: 0
